@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+   <meta http-equiv="refresh" content=""> 
+    <link rel="stylesheet" href="style.css">
+    <script src="func.js"></script>
+
+    <title>Alpaca Generator</title>
+</head>
+
+<body>
+<canvas id="canvas" style="border:5px solid black"></canvas>
+<br><br>
+<button onclick="window.location.reload();">Generate!</button>
+    <h1>Alpaca Generator</h1>
+    <div class="button-container">
+    <div id="accessories">
+        <button onclick="generateAvatar('alpaca', 'accessories', 'earings')">earings</button>
+        <button onclick="generateAvatar('alpaca', 'accessories', 'flower')">flower</button>
+        <button onclick="generateAvatar('alpaca', 'accessories', 'glasses')">glasses</button>
+        <button onclick="generateAvatar('alpaca', 'accessories', 'headphones')">headphones</button>
+    </div>   
+    <br>
+    <div class="backgrounds" id="backgrounds">
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'blue50')">blue50</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'blue60')">blue60</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'blue70')">blue70</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'darkblue30')">darkblue30</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'darkblue50')">darkblue50</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'darkblue70')">darkblue70</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'green50')">green50</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'green60')">green60</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'green70')">green70</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'grey40')">grey40</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'grey70')">grey70</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'grey80')">grey80</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'red50')">red50</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'red60')">red60</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'red70')">red70</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'yellow50')">yellow50</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'yellow60')">yellow60</button>
+        <button onclick="changeAvatarPart('alpaca', 'backgrounds', 'yellow70')">yellow70</button>
+    </div> 
+
+    <br>
+
+    <div id="ears">
+        <button onclick="changeAvatarPart('alpaca', 'ears', 'x')">default</button>
+        <button onclick="changeAvatarPart('alpaca', 'ears', 'tilt-backward')">tilt-backward</button>
+        <button onclick="changeAvatarPart('alpaca', 'ears', 'tilt-forward')">tilt-forward</button>
+    </div>
+
+    <br>
+
+    <div id="eyes">
+        <button onclick="changeAvatarPart('alpaca', 'eyes', 'angry')">angry</button>
+        <button onclick="changeAvatarPart('alpaca', 'eyes', 'x')">default</button>
+        <button onclick="changeAvatarPart('alpaca', 'eyes', 'naughty')">naughty</button>
+        <button onclick="changeAvatarPart('alpaca', 'eyes', 'panda')">panda</button>
+        <button onclick="changeAvatarPart('alpaca', 'eyes', 'smart')">smart</button>
+        <button onclick="changeAvatarPart('alpaca', 'eyes', 'star')">star</button>
+    </div>
+
+    <br>
+
+    <div id="hair">
+        <button onclick="changeAvatarPart('alpaca', 'hair', 'bang')">bangs</button>
+        <button onclick="changeAvatarPart('alpaca', 'hair', 'curls')">curls</button>
+        <button onclick="changeAvatarPart('alpaca', 'hair', 'x')">default</button>
+        <button onclick="changeAvatarPart('alpaca', 'hair', 'elegant')">elegant</button>
+        <button onclick="changeAvatarPart('alpaca', 'hair', 'fancy')">fancy</button>
+        <button onclick="changeAvatarPart('alpaca', 'hair', 'quiff')">quiff</button>
+        <button onclick="changeAvatarPart('alpaca', 'hair', 'short')">short</button>
+    </div>
+
+    <br>
+
+    <div id="leg">
+        <button onclick="changeAvatarPart('alpaca', 'leg', 'bubble-tea')">bubble-tea</button>
+        <button onclick="changeAvatarPart('alpaca', 'leg', 'cookie')">cookie</button>
+        <button onclick="changeAvatarPart('alpaca', 'leg', 'x')">default</button>
+        <button onclick="changeAvatarPart('alpaca', 'leg', 'switch')">switch</button>
+        <button onclick="changeAvatarPart('alpaca', 'leg', 'tilt-backward')">tilt-backward</button>
+        <button onclick="changeAvatarPart('alpaca', 'leg', 'tilt-forward')">tilt-forward</button>
+    </div>
+
+    <div id="mouth">
+        <button onclick="changeAvatarPart('alpaca', 'mouth', 'astonished')">astonished</button>
+        <button onclick="changeAvatarPart('alpaca', 'mouth', 'x')">default</button>
+        <button onclick="changeAvatarPart('alpaca', 'mouth', 'eating')">eating</button>
+        <button onclick="changeAvatarPart('alpaca', 'mouth', 'laugh')">laughing</button>
+        <button onclick="changeAvatarPart('alpaca', 'mouth', 'tongue')">tongue</button>
+    </div>
+
+    <br>
+
+    <div id="neck">
+        <button onclick="changeAvatarPart('alpaca', 'neck', 'bend-forward')">bent-forward</button>
+        <button onclick="changeAvatarPart('alpaca', 'neck', 'bend-backward')">bent-backward</button>
+        <button onclick="changeAvatarPart('alpaca', 'neck', 'x')">default</button>
+        <button onclick="changeAvatarPart('alpaca', 'neck', 'thick')">thick</button>
+    </div>
+    </div>
+
+</body>
+</html>
+ 
