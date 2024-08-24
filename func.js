@@ -118,6 +118,11 @@ window.onload = function () {
         return Necklist[randomNeck];
     }
 
+    function getRandomAccessory () {
+        var randomAccessory = Math.floor(Math.random() * Accessorieslist.length);
+        return Accessorieslist[randomAccessory];
+    }
+
     //THE FUNCTION TO CREATE THE CANVASE AND START PUTTING PICTURES IN IT
 
     function buildAlpaca() {
@@ -211,7 +216,9 @@ window.onload = function () {
 
         var AlpacaLeg = new Image();
         AlpacaLeg.onload = function () {
-            context.drawImage(AlpacaLeg, 100, 100,);
+            var legWidth = AlpacaLeg.width * 0.5;
+            var legHeight = AlpacaLeg.height * 0.5;
+            context.drawImage(AlpacaLeg, 50, 50, legHeight, legWidth);
         };
 
         //NECK
@@ -222,6 +229,13 @@ window.onload = function () {
             var neckHeight = AlpacaNeck.height * 0.5; // Scale to 50% of the original height
             context.drawImage(AlpacaNeck, 50, 40, neckWidth, neckHeight);
         };
+
+        var AlpacaAccessory = new Image();
+        AlpacaAccessory.onload = function() {
+            var accessoryWidth = AlpacaAccessory.width * 0.5;
+            var accessoryHeight = AlpacaAccessory.height * 0.5;
+            context.drawImage(AlpacaAccessory, 50, 20, accessoryWidth, accessoryHeight);
+        }
 
         //CALLING THE FUNCTION
 
@@ -240,6 +254,8 @@ window.onload = function () {
         AlpacaLeg.src = getRandomLegImage();
 
         AlpacaMouth.src = getRandomMouthImage();
+
+        AlpacaAccessory.src = getRandomAccessory();
     }
 
     buildAlpaca();
